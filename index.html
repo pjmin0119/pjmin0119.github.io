@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>박정민 Portfolio</title>
+<meta name="description" content="브랜드·콘텐츠 마케터 박정민의 케이스 스터디 포트폴리오">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap">
+<style>
+/* Layout: editorial spreads on a 12-column grid. Type and white space carry the page:
+   one oversized statement per section, everything else small and quiet.
+   No boxes, no fills behind content; hairline rules are the only dividers. */
+:root{
+  --paper:#F3F3F1;
+  --ink:#111214;
+  --ink-2:#5E616B;
+  --line:#CDCED3;
+  --accent:#2A36E8;
+  --fold-1:#C9CACE;
+  --glass:rgba(255,255,255,.42);
+  --glass-back:rgba(120,123,133,.22);
+  --glass-edge:rgba(255,255,255,.85);
+  --glass-ink:#111214;
+
+  --f-kr:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-wide:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+
+  --gut:clamp(16px,4vw,64px);
+  --maxw:1520px;
+
+  --t-mega:clamp(3rem,.6rem + 9.2vw,11.5rem);
+  --t-xl:clamp(2.3rem,.9rem + 5vw,6.6rem);
+  --t-l:clamp(1.7rem,.95rem + 2.7vw,3.9rem);
+  --t-m:clamp(1.2rem,1rem + .75vw,1.75rem);
+  --t-s:clamp(.98rem,.95rem + .12vw,1.06rem);
+  --t-xs:.76rem;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F1012;--ink:#ECECEE;--ink-2:#9A9DA7;--line:#2B2D33;--accent:#8C96FF;--fold-1:#3A3C43;--glass:rgba(255,255,255,.07);--glass-back:rgba(255,255,255,.05);--glass-edge:rgba(255,255,255,.22);--glass-ink:#ECECEE;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0F1012;--ink:#ECECEE;--ink-2:#9A9DA7;--line:#2B2D33;--accent:#8C96FF;--fold-1:#3A3C43;--glass:rgba(255,255,255,.07);--glass-back:rgba(255,255,255,.05);--glass-edge:rgba(255,255,255,.22);--glass-ink:#ECECEE;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-kr);font-size:var(--t-s);line-height:1.8;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3,h4,p,figure,dl,dd{margin:0}
+h1,h2,h3,h4{font-weight:inherit;text-wrap:balance}
+ul,ol{margin:0;padding:0;list-style:none}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
+.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(12px,1.6vw,28px)}
+.g > *{min-width:0}
+.lbl{font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.06em;text-transform:uppercase;line-height:1.5}
+.muted{color:var(--ink-2)}
+.u{display:inline-block}
+.todo{color:var(--accent);font-weight:500}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper)}
+.top .bar1{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:54px}
+.brand{font-weight:800;text-decoration:none;font-size:.95rem;letter-spacing:-.01em;white-space:nowrap}
+.brand span{font-family:var(--f-mono);font-weight:400;font-size:var(--t-xs);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin-left:.6rem}
+.nav{display:flex;gap:clamp(1rem,2.5vw,2.2rem)}
+.nav a{text-decoration:none;font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.08em;text-transform:uppercase}
+.nav a:hover{color:var(--accent)}
+@media (max-width:480px){.brand span{display:none}}
+
+.chapters{display:none}
+body.in-case .chapters{display:block}
+.chapters ol{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px}
+.chapters li{min-width:0}
+.chapters a{display:block;text-decoration:none;padding-bottom:.55rem}
+.chapters .b{display:block;height:2px;background:var(--line);position:relative;overflow:hidden}
+.chapters .b i{position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(var(--p,0))}
+.chapters .t{display:block;margin-top:.35rem;font-family:var(--f-mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chapters li.on .t{color:var(--ink)}
+@media (max-width:520px){.chapters .t{font-size:.68rem;letter-spacing:0}}
+
+/* section opener: small label on a hairline, never a giant repeated heading */
+.opener{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--ink);padding-top:.7rem}
+
+/* ---------- HERO ----------
+   A folder with the work fanning out of it, then one word: Portfolio.
+   Everything is placed in container units (cqw) so the composition scales as one piece. */
+.hero{padding-block:clamp(1rem,2vw,2rem) 0}
+.stage{position:relative;container-type:inline-size;width:100%;aspect-ratio:16/8.2;overflow:clip;
+  --fx:12cqw;--fy:14cqw;--fw:24cqw;--cx:16cqw;--cy:6cqw;--cw:13.5cqw;--step:13deg;--pivot:215%}
+.folder-back,.folder-front{position:absolute;left:var(--fx);width:var(--fw);border-radius:.9cqw}
+.folder-back{top:var(--fy);height:calc(var(--fw)*.7);background:var(--glass-back);border:1px solid var(--glass-edge);z-index:1;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.folder-back::before{content:"";position:absolute;left:-1px;top:-2.1cqw;width:40%;height:2.4cqw;background:var(--glass-back);border:1px solid var(--glass-edge);border-bottom:0;border-radius:.8cqw .8cqw 0 0}
+.folder-front{top:calc(var(--fy) + 3.2cqw);height:calc(var(--fw)*.6);z-index:30;background:var(--glass);border:1px solid var(--glass-edge);
+  -webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);
+  display:flex;align-items:flex-end;padding:1.3cqw 1.5cqw}
+.folder-name{font-weight:800;font-size:clamp(.8rem,1.5cqw,1.35rem);letter-spacing:-.03em;color:var(--glass-ink);line-height:1.2}
+.fan{position:absolute;left:var(--cx);top:var(--cy);width:var(--cw);aspect-ratio:3/4;z-index:calc(20 - var(--i));
+  transform-origin:50% var(--pivot);transform:rotate(calc(var(--i) * var(--step)));border-radius:.8cqw;overflow:hidden;background:var(--fold-1);
+  transition:transform .7s cubic-bezier(.2,.7,.2,1);display:block}
+.fan img{width:100%;height:100%;object-fit:cover}
+.stage:hover .fan{transform:rotate(calc(var(--i) * var(--step) * 1.06))}
+.fan:hover{outline:2px solid var(--accent);outline-offset:-2px}
+@media (prefers-reduced-motion:no-preference){
+  .fan{animation:fanout .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * 50ms)}
+  @keyframes fanout{from{transform:rotate(0deg) translateY(25%)}}
+}
+.hero-word{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem 2rem;margin-top:clamp(-7rem,-6vw,-1.5rem);position:relative;z-index:2;pointer-events:none}
+.hero-word *{pointer-events:auto}
+.hero h1{font-family:var(--f-wide);font-weight:800;font-stretch:100%;font-size:clamp(4rem,1rem + 11.5vw,15rem);line-height:.8;letter-spacing:-.055em;margin-left:-.04em}
+.hero-word .side{max-width:24rem;padding-bottom:.6rem}
+.hero-word .side b{display:block;font-weight:800;font-size:var(--t-m);letter-spacing:-.03em;line-height:1.4}
+.hero-word .side b em{font-style:normal;color:var(--accent)}
+.hero-word .side .lbl{display:block;margin-top:.6rem;color:var(--ink-2)}
+@media (max-width:700px){
+  .stage{aspect-ratio:1/1;--fx:3cqw;--fy:26cqw;--fw:36cqw;--cx:8cqw;--cy:12cqw;--cw:25cqw;--step:14deg;--pivot:195%}
+  .folder-name{font-size:.85rem}
+  .hero-word{margin-top:0}
+}
+
+/* ---------- ABOUT ---------- */
+.about{padding-block:clamp(7rem,16vw,15rem) 0}
+.statement{font-weight:800;font-size:var(--t-l);line-height:1.32;letter-spacing:-.04em;margin-top:clamp(2.5rem,6vw,5rem);grid-column:1/12}
+.statement .soft{color:var(--ink-2)}
+.about .g.body{margin-top:clamp(4rem,9vw,8rem);row-gap:2.5rem}
+.about .photo{grid-column:1/4}
+.about .photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;filter:grayscale(1)}
+.about .photo figcaption{margin-top:.6rem}
+.about .txt{grid-column:6/12;display:grid;gap:1.1rem;max-width:60ch;color:var(--ink-2)}
+.about .txt p:first-child{color:var(--ink)}
+@media (max-width:820px){.about .photo{grid-column:1/8}.about .txt{grid-column:1/-1}.statement{grid-column:1/-1}}
+
+/* numbers: one figure dominates, the rest sit beside it as a list */
+.nums{margin-top:clamp(6rem,13vw,11rem);row-gap:2.5rem;align-items:end}
+.nums .lead{grid-column:1/8}
+.big-num{font-family:var(--f-wide);font-weight:800;font-stretch:75%;font-size:clamp(5rem,2rem + 13vw,17rem);line-height:.8;letter-spacing:-.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.big-num small{font-family:var(--f-kr);font-weight:800;font-size:.32em;letter-spacing:-.04em;margin-left:.05em}
+.nums .lead p{margin-top:1.2rem;font-size:var(--t-m);font-weight:500;letter-spacing:-.02em}
+.nums ul{grid-column:9/13;border-top:1px solid var(--ink)}
+.nums li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-block:.85rem;border-bottom:1px solid var(--line);font-size:.92em}
+.nums li b{font-family:var(--f-wide);font-weight:700;font-stretch:85%;font-size:1.5rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.nums li span{color:var(--ink-2)}
+@media (max-width:820px){.nums .lead,.nums ul{grid-column:1/-1}}
+
+.block{margin-top:clamp(6rem,13vw,11rem)}
+.block-h{grid-column:1/4}
+.block-h h3{font-weight:800;font-size:var(--t-m);letter-spacing:-.02em;line-height:1.35;margin-top:.5rem}
+.block-c{grid-column:4/13}
+@media (max-width:820px){.block-h,.block-c{grid-column:1/-1}.block-c{margin-top:1.5rem}}
+
+.ways li{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr);gap:.4rem 2rem;padding-block:1.6rem;border-top:1px solid var(--line)}
+.ways li:first-child{border-top:1px solid var(--ink)}
+.ways h4{font-weight:800;font-size:var(--t-m);line-height:1.4;letter-spacing:-.03em}
+.ways h4 .lbl{display:block;color:var(--accent);margin-bottom:.4rem;font-weight:400}
+.ways p{color:var(--ink-2);font-size:.95em;padding-top:1.4rem}
+.ways p a{color:var(--ink);text-underline-offset:3px;white-space:nowrap}
+@media (max-width:640px){.ways li{grid-template-columns:1fr}.ways p{padding-top:0}}
+
+.cv{font-size:.92em}
+.cv li{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,3fr) minmax(0,5fr);gap:.3rem 1.5rem;padding-block:1.1rem;border-top:1px solid var(--line)}
+.cv li:first-child{border-top:1px solid var(--ink)}
+.cv .when{font-family:var(--f-mono);font-size:var(--t-xs);font-variant-numeric:tabular-nums;padding-top:.25rem;color:var(--ink-2)}
+.cv b{font-weight:700}
+.cv .role{display:block;color:var(--ink-2)}
+.cv .what{color:var(--ink-2)}
+@media (max-width:640px){.cv li{grid-template-columns:1fr}}
+
+.side{row-gap:1.5rem;align-items:end}
+.side .imgs{grid-column:1/8;display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(8px,1vw,14px);align-items:end}
+.side .imgs img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.side .imgs img:last-child{aspect-ratio:3/4}
+.side .t{grid-column:9/13}
+.side .t p{color:var(--ink-2);margin-top:.8rem;font-size:.95em}
+.side .t b{font-weight:800;font-size:var(--t-m);letter-spacing:-.02em;line-height:1.4;display:block;margin-top:.4rem}
+@media (max-width:820px){.side .imgs,.side .t{grid-column:1/-1}}
+
+/* ---------- WORK ---------- */
+.work-sec{padding-block:clamp(7rem,16vw,15rem) 0}
+.work-title{font-family:var(--f-wide);font-weight:800;font-stretch:125%;font-size:clamp(2.8rem,.6rem + 9vw,11rem);line-height:.86;letter-spacing:-.045em;text-transform:uppercase;margin-top:clamp(2rem,5vw,4rem)}
+.work-title sup{font-size:.22em;font-stretch:100%;vertical-align:2.6em;letter-spacing:0;margin-left:.2em;color:var(--accent)}
+
+.spread{display:block;text-decoration:none;margin-top:clamp(5rem,11vw,10rem)}
+.spread .head{align-items:end;row-gap:1rem}
+.spread .no{grid-column:1/2;font-family:var(--f-wide);font-weight:800;font-stretch:80%;font-size:var(--t-m);color:var(--accent);line-height:1.2}
+.spread .name{grid-column:2/10}
+.spread h3{font-weight:900;font-size:var(--t-l);line-height:1.15;letter-spacing:-.045em}
+.spread .sub{display:block;margin-top:.6rem;font-size:var(--t-m);font-weight:400;color:var(--ink-2);letter-spacing:-.02em;line-height:1.5}
+.spread .more{grid-column:10/13;justify-self:end;align-self:end;white-space:nowrap;border-bottom:1px solid currentColor;padding-bottom:.1rem}
+.spread .pic{margin-top:clamp(1.5rem,3vw,2.5rem);overflow:hidden}
+.spread .pic img{width:100%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.spread:hover .pic img{transform:scale(1.02)}
+.spread:hover h3,.spread:hover .more{color:var(--accent)}
+.spread .facts{margin-top:1.1rem;row-gap:.8rem;font-size:.9em}
+.spread .facts div{grid-column:span 3}
+.spread .facts .lbl{display:block;color:var(--ink-2)}
+.spread .facts b{font-family:var(--f-wide);font-weight:700;font-stretch:85%;font-size:1.35rem;letter-spacing:-.02em;color:var(--accent)}
+@media (max-width:820px){
+  .spread .no,.spread .name{grid-column:1/-1}.spread .more{display:none}
+  .spread .facts div{grid-column:span 6}
+}
+
+/* feature spread (01) gets the largest name */
+.spread.feature h3{font-size:var(--t-xl);letter-spacing:-.055em;line-height:1.05}
+.spread.feature .name{grid-column:2/12}
+@media (max-width:820px){.spread.feature .name{grid-column:1/-1}}
+
+/* paired spreads (05, 06): two columns, portrait screens, offset */
+.pair{margin-top:clamp(5rem,11vw,10rem);row-gap:5rem}
+.pair .spread{margin-top:0}
+.pair > .spread:first-child{grid-column:1/7}
+.pair > .spread:last-child{grid-column:8/13;padding-top:clamp(0rem,10vw,10rem)}
+.pair .spread .no{display:block;margin-bottom:.6rem}
+.pair .spread .sub{font-size:var(--t-s)}
+.pair .pic{display:flex;gap:clamp(6px,1vw,12px);align-items:flex-start}
+.pair .pic img{flex:1 1 0;min-width:0;width:auto}
+.pair .spread .facts div{grid-column:span 6}
+@media (max-width:820px){.pair > .spread:first-child,.pair > .spread:last-child{grid-column:1/-1;padding-top:0}}
+
+/* ---------- CONTACT ---------- */
+.contact{padding-block:clamp(7rem,16vw,15rem) clamp(3rem,6vw,5rem)}
+.contact .say{font-weight:800;font-size:var(--t-l);line-height:1.3;letter-spacing:-.04em;margin-top:clamp(2.5rem,6vw,5rem)}
+.mail{margin-top:clamp(3rem,7vw,6rem);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem;border-bottom:2px solid var(--ink);padding-bottom:1rem}
+.mail a{font-family:var(--f-wide);font-weight:800;font-stretch:80%;font-size:clamp(2rem,.6rem + 6.8vw,8.6rem);line-height:.95;letter-spacing:-.04em;text-decoration:none;overflow-wrap:anywhere;min-width:0}
+.mail a:hover{color:var(--accent)}
+.btn{font:inherit;font-family:var(--f-mono);font-size:var(--t-xs);letter-spacing:.08em;text-transform:uppercase;background:none;color:var(--ink);border:0;border-bottom:1px solid currentColor;padding:.2rem 0;cursor:pointer}
+.btn:hover{color:var(--accent)}
+.links{margin-top:1.5rem;row-gap:1rem}
+.links div{grid-column:span 4}
+.links .lbl{display:block;color:var(--ink-2)}
+@media (max-width:640px){.links div{grid-column:1/-1}}
+.foot{padding-block:2rem 3rem;display:flex;justify-content:space-between;gap:1rem;color:var(--ink-2);border-top:1px solid var(--line)}
+.foot a{text-decoration:none}
+
+/* ---------- CASE ---------- */
+body.in-case #home{display:none}
+.case{padding-bottom:3rem}
+.c-head{padding-top:clamp(3rem,7vw,6rem)}
+.c-head .back{text-decoration:none;color:var(--ink-2)}
+.c-head .back:hover{color:var(--accent)}
+.c-head .pno{display:block;margin-top:clamp(3rem,8vw,7rem);color:var(--accent)}
+.c-head h1{font-weight:900;font-size:var(--t-xl);line-height:1.06;letter-spacing:-.055em;margin-top:1.2rem;max-width:15ch}
+.c-head .sub{font-size:var(--t-m);color:var(--ink-2);margin-top:1.4rem;letter-spacing:-.02em;line-height:1.55;max-width:34ch}
+.c-meta{margin-top:clamp(3rem,7vw,5.5rem);border-top:1px solid var(--ink);padding-top:1rem;row-gap:1.2rem;font-size:.9em;line-height:1.65}
+.c-meta div{grid-column:span 3}
+.c-meta dt{color:var(--ink-2);margin-bottom:.3rem}
+@media (max-width:820px){.c-meta div{grid-column:span 6}}
+
+.plate{margin-top:clamp(3rem,7vw,6rem)}
+.plate img{width:100%}
+.plate figcaption{margin-top:.7rem;color:var(--ink-2)}
+.plate .row{display:flex;gap:clamp(8px,1.2vw,18px);align-items:flex-start}
+.plate .row img{flex:1 1 0;min-width:0;width:auto}
+.plate.narrow{max-width:62%}
+@media (max-width:820px){.plate.narrow{max-width:100%}}
+
+/* headline figure + supporting figures */
+.c-kpi{margin-top:clamp(4rem,9vw,8rem);row-gap:2rem;align-items:end}
+.c-kpi .lead{grid-column:1/8}
+.c-kpi .lead .big-num{color:var(--accent);font-size:clamp(4.4rem,1.5rem + 11vw,14rem)}
+.c-kpi .lead p{margin-top:1rem;font-size:var(--t-m);font-weight:500;letter-spacing:-.02em}
+.c-kpi ul{grid-column:9/13;border-top:1px solid var(--ink)}
+.c-kpi li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-block:.85rem;border-bottom:1px solid var(--line);font-size:.9em}
+.c-kpi li b{font-family:var(--f-wide);font-weight:700;font-stretch:85%;font-size:1.45rem;letter-spacing:-.02em;white-space:nowrap}
+.c-kpi li span{color:var(--ink-2)}
+@media (max-width:820px){.c-kpi .lead,.c-kpi ul{grid-column:1/-1}}
+
+.c-bg{margin-top:clamp(5rem,11vw,9rem);row-gap:1rem}
+.c-bg .lbl{grid-column:1/4;color:var(--ink-2);padding-top:.5rem}
+.c-bg p{grid-column:4/11;font-size:var(--t-m);line-height:1.7;letter-spacing:-.02em}
+@media (max-width:820px){.c-bg .lbl,.c-bg p{grid-column:1/-1}}
+
+/* chapters */
+.step{margin-top:clamp(6rem,13vw,11rem);scroll-margin-top:110px;row-gap:1.4rem}
+.s-lbl{grid-column:1/4;align-self:start;position:sticky;top:calc(env(safe-area-inset-top,0px) + 112px);border-top:1px solid var(--ink);padding-top:.7rem}
+.s-lbl b{display:block;font-family:var(--f-wide);font-weight:800;font-stretch:110%;font-size:1.05rem;letter-spacing:.01em;text-transform:uppercase;margin-top:.35rem}
+.s-lbl .ko{display:block;color:var(--ink-2);font-size:.85em}
+.s-lbl .arr{display:block;margin-top:1.6rem;color:var(--accent);font-family:var(--f-wide);font-size:1.3rem;line-height:1}
+.s-body{grid-column:4/13}
+.s-body > p{max-width:60ch;color:var(--ink-2)}
+.s-body > * + *{margin-top:1.4rem}
+@media (max-width:820px){.s-lbl{grid-column:1/-1;position:static}.s-lbl .arr{display:none}.s-body{grid-column:1/-1}}
+
+.s-body > p.hl-l{font-weight:800;font-size:var(--t-l);line-height:1.32;letter-spacing:-.045em;color:var(--ink);max-width:22ch}
+.s-body > p.hl-m{font-weight:800;font-size:var(--t-m);line-height:1.5;letter-spacing:-.03em;color:var(--ink);max-width:34ch}
+
+/* insight is the hinge of each story: widest, largest line on the page */
+.step.insight .s-lbl{position:static}
+.step.insight .s-body{grid-column:1/13}
+.step.insight .quote{font-weight:800;font-size:var(--t-l);line-height:1.32;letter-spacing:-.045em;max-width:22ch;color:var(--ink)}
+.step.insight .quote.todo{color:var(--accent)}
+.step.insight .after{grid-column:4/11;color:var(--ink-2);margin-top:2rem;max-width:58ch}
+.step.insight .after p + p{margin-top:1rem}
+@media (max-width:820px){.step.insight .after{grid-column:1/-1}}
+
+.list{border-top:1px solid var(--ink);counter-reset:n}
+.list li{display:grid;grid-template-columns:2.6rem minmax(0,1fr);gap:1rem;padding-block:.95rem;border-bottom:1px solid var(--line);counter-increment:n}
+.list li::before{content:counter(n,decimal-leading-zero);font-family:var(--f-mono);font-size:var(--t-xs);color:var(--ink-2);padding-top:.35rem}
+.list.plain li{grid-template-columns:minmax(0,1fr)}
+.list.plain li::before{content:none}
+
+.flow{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));border-top:1px solid var(--ink)}
+.flow div{padding:1rem 1.2rem 0 0;min-width:0}
+.flow div + div{padding-left:1.2rem;border-left:1px solid var(--line)}
+.flow .lbl{color:var(--accent)}
+.flow b{display:block;font-weight:800;font-size:var(--t-m);letter-spacing:-.03em;line-height:1.35;margin-top:.5rem}
+.flow p{color:var(--ink-2);font-size:.9em;margin-top:.4rem}
+@media (max-width:640px){.flow{grid-template-columns:1fr}.flow div + div{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:1rem}}
+
+.res{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(12px,2vw,32px);row-gap:2.5rem}
+.res > div{min-width:0;border-top:1px solid var(--ink);padding-top:.8rem}
+.res .n{font-family:var(--f-wide);font-weight:800;font-stretch:75%;font-size:clamp(3rem,1.3rem + 5.6vw,7.6rem);line-height:.9;letter-spacing:-.04em;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.res .n small{font-family:var(--f-kr);font-size:.36em;font-weight:800;letter-spacing:-.04em}
+.res span{display:block;margin-top:.7rem;color:var(--ink-2);font-size:.92em}
+.note{font-size:.85em;color:var(--ink-2)}
+
+
+.next{display:block;text-decoration:none;margin-top:clamp(7rem,15vw,13rem);border-top:1px solid var(--ink);padding-block:1rem 3rem}
+.next .lbl{color:var(--ink-2)}
+.next b{display:block;font-weight:900;font-size:var(--t-xl);line-height:1.06;letter-spacing:-.055em;margin-top:1rem;max-width:16ch}
+.next:hover b{color:var(--accent)}
+
+/* ---------- mobile fit: tap targets, wide strips ---------- */
+.brand{display:inline-block;padding-block:.6rem}
+.nav a{padding-block:.85rem}
+.c-head .back{display:inline-block;padding-block:.8rem}
+.foot a{display:inline-block;padding-block:.7rem}
+.ways p a{display:inline-block;padding:.55rem .15rem}
+.btn{padding:.85rem 0}
+.chapters a{padding-top:.5rem}
+.work-title sup{font-size:max(.22em,.8rem)}
+@media (max-width:700px){
+  .strip .sx,.pic.strip{overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .strip img,.spread .pic.strip img{width:auto;max-width:none;height:190px}
+  .spread:hover .pic.strip img{transform:none}
+  figure.strip figcaption::before{content:"← 옆으로 넘겨보기 · ";color:var(--accent)}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar1">
+    <a class="brand" href="#top">박정민<span>Brand · Content Marketer</span></a>
+    <nav class="nav" aria-label="주요 메뉴"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  </div>
+  <div class="chapters wrap" aria-label="케이스 스터디 진행">
+    <ol id="chapterBar">
+      <li data-k="problem"><a href="#"><span class="b"><i></i></span><span class="t">Problem</span></a></li>
+      <li data-k="insight"><a href="#"><span class="b"><i></i></span><span class="t">Insight</span></a></li>
+      <li data-k="strategy"><a href="#"><span class="b"><i></i></span><span class="t">Strategy</span></a></li>
+      <li data-k="execution"><a href="#"><span class="b"><i></i></span><span class="t">Execution</span></a></li>
+      <li data-k="result"><a href="#"><span class="b"><i></i></span><span class="t">Result</span></a></li>
+    </ol>
+  </div>
+</header>
+
+<main>
+<div id="home">
+
+<!-- HERO -->
+<section class="hero wrap" id="top">
+  <div class="stage">
+    <span class="folder-back" aria-hidden="true"></span>
+    <a class="fan" href="#work-01" style="--i:0"><img src="assets/ba-01.jpg" alt="B&amp;A 시리즈 썸네일" style="object-position:50% 50%"></a>
+    <a class="fan" href="#work-03" style="--i:1"><img src="assets/yafit-01.jpg" alt="야핏 캠페인 썸네일" style="object-position:30% 50%"></a>
+    <a class="fan" href="#work-05" style="--i:2"><img src="assets/promo-02.jpg" alt="1/4 특가 프로모션 페이지" style="object-position:50% 30%"></a>
+    <a class="fan" href="#work-04" style="--i:3"><img src="assets/onsite-01.jpg" alt="하루 1장 광고 상품 페이지" style="object-position:50% 20%"></a>
+    <a class="fan" href="#work-02" style="--i:4"><img src="assets/creator-grid.jpg" alt="크리에이터 협업 콘텐츠" style="object-position:8% 50%"></a>
+    <a class="fan" href="#work-05" style="--i:5"><img src="assets/promo-01.jpg" alt="봄시즌 단독특가 페이지" style="object-position:50% 40%"></a>
+    <a class="fan" href="#work-01" style="--i:6"><img src="assets/ba-02.jpg" alt="B&amp;A 에피소드 썸네일" style="object-position:62% 50%"></a>
+    <span class="folder-front"><span class="folder-name">브랜드 마케터 포트폴리오</span></span>
+  </div>
+  <div class="hero-word">
+    <h1>Portfolio</h1>
+    <div class="side"><b>브랜드를 만들고,<br><em>고객의 행동</em>까지 설계합니다.</b><span class="lbl">박정민 · Brand Marketer</span></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about wrap" id="about">
+  <div class="opener lbl"><span>About</span><span class="muted">01 / 03</span></div>
+  <div class="g"><p class="statement"><span class="u">퍼널마다 메시지를 정의하고,</span> <span class="u soft">콘텐츠로 퍼뜨려 왔습니다.</span></p></div>
+
+  <div class="g body">
+    <figure class="photo"><img src="assets/profile.jpg" alt="박정민 프로필 사진"><figcaption class="lbl muted">박정민 · 가천대 신문방송학</figcaption></figure>
+    <div class="txt">
+      <p>야나두에서 브랜디드 콘텐츠 기획·제작과 인플루언서 마케팅을 거쳐, 최근에는 온사이트 마케팅을 맡아 광고와 사이트의 메시지를 맞추고 리드와 결제로 이어지는 동선을 다듬었습니다.</p>
+      <p>팀장과 둘이 시작한 소규모 조직에서 성과를 바탕으로 팀이 커지는 과정을 겪었고, 캠페인 규모가 커지면서 2~3인 규모의 팀을 구성해 프로젝트를 이끌었습니다.</p>
+      <p>그 전에는 SK텔레콤에서 공식 SNS 채널을 운영하며 대고객 커뮤니케이션을, 위키트리에서 젊은 타깃 대상 네이티브 광고 콘텐츠를 만들며 반응을 끌어내는 법을 익혔습니다.</p>
+    </div>
+  </div>
+
+  <div class="g nums">
+    <div class="lead"><div class="big-num">2,560<small>만</small></div><p>크리에이터 협업 콘텐츠 누적 조회</p></div>
+    <ul>
+      <li><span>크리에이터 협업</span><b>363건</b></li>
+      <li><span>크리에이터 채널 연 매출 비중</span><b>20%</b></li>
+      <li><span>B&amp;A 시리즈 누적 조회</span><b>450만</b></li>
+      <li><span>유튜브 광고 ROAS</span><b>300%</b></li>
+    </ul>
+  </div>
+
+  <div class="g block">
+    <div class="block-h"><span class="lbl muted">How I Work</span><h3>일하는 방식</h3></div>
+    <ul class="block-c ways">
+      <li><h4><span class="lbl">Message → Story</span>브랜드 메시지를 사람의 이야기로 증명합니다</h4><p>‘야 너두 할 수 있어’라는 캐치프레이즈를 실제 수강생의 학습 전과 후로 보여주는 시리즈로 바꿨습니다. <a href="#work-01">P.01 →</a></p></li>
+      <li><h4><span class="lbl">Creator System</span>한 번의 협업을 반복 가능한 구조로 만듭니다</h4><p>크리에이터 브리프, 레벨링 기준, 섭외 매뉴얼을 만들어 1인 업무를 3인 팀 규모의 채널로 키웠습니다. <a href="#work-02">P.02 →</a></p></li>
+      <li><h4><span class="lbl">Full Funnel</span>퍼널마다 채널의 역할을 나눕니다</h4><p>인지는 PPL과 메인 모델, 사용 장면은 크리에이터, 전환은 광고 소재가 맡도록 설계했습니다. <a href="#work-03">P.03 →</a> <a href="#work-06">P.06 →</a></p></li>
+      <li><h4><span class="lbl">Data Check</span>브랜딩이 성과로 이어졌는지 지표로 확인합니다</h4><p>GA4로 유입·전환을, Microsoft Clarity로 이탈 지점의 실제 행동을 보고 페이지와 상품 구성을 고칩니다. <a href="#work-04">P.04 →</a> <a href="#work-05">P.05 →</a></p></li>
+    </ul>
+  </div>
+
+  <div class="g block">
+    <div class="block-h"><span class="lbl muted">Experience</span><h3>경력</h3></div>
+    <ul class="block-c cv">
+      <li><span class="when">2018.07 — 2022.09<br>2025.10 — 2026.06</span><div><b>야나두</b><span class="role">과장 · 브랜드 마케터</span></div><span class="what">온사이트 마케팅 전략 수립 및 실행, 주요 캠페인 콘텐츠 마케팅(PPL·B&amp;A), 인플루언서 마케팅, 유튜브·메타 광고 운영 및 소재 제작</span></li>
+      <li><span class="when">2017.12 — 2018.07</span><div><b>위키트리</b><span class="role">광고 콘텐츠 기획자</span></div><span class="what">네이티브 광고 콘텐츠 기획·제작 및 운영, 지면 내 배너 운영 및 수익화, 신규 사업(자사 플레이어 구축) 참여</span></li>
+      <li><span class="when">2015.06 — 2017.07</span><div><b>SK텔레콤</b><span class="role">소셜 채널 운영 매니저</span></div><span class="what">공식 SNS 4개 채널(Facebook·Twitter·YouTube·Instagram) 운영, 채널별 네이티브 콘텐츠 기획, 공식 홈페이지 운영</span></li>
+      <li><span class="when">2014.06 — 2015.02</span><div><b>아이스큐브 마케팅 컴퍼니</b><span class="role">광고기획 (AE)</span></div><span class="what">GDN 관리 및 운영, 배너·뉴스레터 광고 소재 기획, 63오르기 대회 프로모션 운영</span></li>
+      <li><span class="when">2010.03 — 2014.08</span><div><b>가천대학교</b><span class="role">신문방송학과 학사</span></div><span class="what"></span></li>
+    </ul>
+  </div>
+
+  <div class="g block side">
+    <div class="imgs"><img src="assets/turkey-01.jpg" alt="터키남녀 채널 영상 장면: 한복을 입은 출연진"><img src="assets/turkey-02.jpg" alt="터키남녀 채널 영상 장면: 마트에서 장을 보는 출연진"></div>
+    <div class="t"><span class="lbl muted">Side Project · ~2020</span><b>유튜브 채널 ‘터키남녀’</b><p>터키 출신 출연진이 한국 문화를 체험하는 채널. 작가로 참여해 소재 발굴, 기획, 섭외를 맡았고, 광고 집행 없이 오가닉으로 최대 175만 조회를 기록했습니다.</p></div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work-sec wrap" id="work">
+  <div class="opener lbl"><span>Selected Work</span><span class="muted">02 / 03</span></div>
+  <h2 class="work-title">Case<br>Studies<sup>(6)</sup></h2>
+
+  <a class="spread feature" href="#work-01">
+    <div class="g head"><span class="no">01</span><div class="name"><h3>브랜드 오리지널 시리즈 B&amp;A 프로젝트</h3><span class="sub">‘야 너두 할 수 있어’를 증명한 유튜브 시리즈</span></div></div>
+    <div class="pic strip"><img src="assets/ba-strip.jpg" alt="B&amp;A 시리즈 썸네일" loading="lazy"></div>
+    <div class="g facts">
+      <div><span class="lbl">Role</span>콘텐츠 기획·섭외·운영 → 프로젝트 리딩</div>
+      <div><span class="lbl">Period</span>2019 — 2021 · 야나두</div>
+      <div><span class="lbl">Contents</span><b>80건</b></div>
+      <div><span class="lbl">YouTube Views</span><b>450만</b></div>
+    </div>
+  </a>
+
+  <a class="spread" href="#work-02">
+    <div class="g head"><span class="no">02</span><div class="name"><h3>크리에이터 협업 시스템 구축</h3><span class="sub">혼자 시작한 크리에이터 협업을 매출 채널로</span></div><span class="more lbl">Read case</span></div>
+    <div class="pic strip"><img src="assets/creator-grid.jpg" alt="크리에이터 협업 콘텐츠 썸네일 모음" loading="lazy"></div>
+    <div class="g facts">
+      <div><span class="lbl">Role</span>크리에이터 협업 전략 수립 및 운영 (초기 1인)</div>
+      <div><span class="lbl">Period</span>2019 — 2021 · 야나두</div>
+      <div><span class="lbl">Collaborations</span><b>363건</b></div>
+      <div><span class="lbl">Share of Annual Sales</span><b>20%</b></div>
+    </div>
+  </a>
+
+  <a class="spread" href="#work-03">
+    <div class="g head"><span class="no">03</span><div class="name"><h3>신규 브랜드 ‘야핏’ 런칭 캠페인</h3><span class="sub">새로운 형태의 제품을 장면으로 설명하기</span></div><span class="more lbl">Read case</span></div>
+    <div class="pic strip"><img src="assets/yafit-strip.jpg" alt="야핏 캠페인 주요 콘텐츠 썸네일" loading="lazy"></div>
+    <div class="g facts">
+      <div><span class="lbl">Role</span>PPL 기획 및 관리, 크리에이터 협업 전략 수립</div>
+      <div><span class="lbl">Period</span>2021 — 2022.03 · 야나두</div>
+      <div><span class="lbl">Sales (WoW)</span><b>+70%</b></div>
+      <div><span class="lbl">Naver Search Volume</span><b>+126%</b></div>
+    </div>
+  </a>
+
+  <div class="g pair">
+    <a class="spread" href="#work-04">
+      <span class="no">04</span><div class="name"><h3>온사이트 &amp; 상품 랜딩 개편</h3><span class="sub">개편된 상품에 맞춰 브랜드 메시지와 리드 동선을 다시 정비</span></div>
+      <div class="pic"><img src="assets/onsite-01.jpg" alt="광고 상품 페이지: 하루 1장" loading="lazy"><img src="assets/onsite-02.jpg" alt="광고 상품 페이지: 영어의 진리 짧고 쉽게" loading="lazy"></div>
+      <div class="g facts">
+        <div><span class="lbl">Period</span>2025.12 — 2026.01</div>
+        <div><span class="lbl">Role</span>브랜드 메시지 정리, 랜딩 구성 기획</div>
+        <div><span class="lbl">Leads</span><b>+13%</b></div>
+        <div><span class="lbl">Payment CVR</span><b>5→7%</b></div>
+      </div>
+    </a>
+    <a class="spread" href="#work-05">
+      <span class="no">05</span><div class="name"><h3>즉시 결제 상품 판매 기획</h3><span class="sub">상담 없이도 팔리는 상품으로 TM 매출 공백 메우기</span></div>
+      <div class="pic"><img src="assets/promo-01.jpg" alt="봄시즌 단독특가 페이지" loading="lazy"><img src="assets/promo-02.jpg" alt="1/4 특가 페이지" loading="lazy"></div>
+      <div class="g facts">
+        <div><span class="lbl">Period</span>2026.01 — 2026.05</div>
+        <div><span class="lbl">Role</span>마케팅 전략, 상품 구성, 페이지 기획</div>
+        <div><span class="lbl">vs. March KPI</span><b>140%</b></div>
+        <div><span class="lbl">ROAS</span><b>479%</b></div>
+      </div>
+    </a>
+  </div>
+
+  <a class="spread" href="#work-06">
+    <div class="g head"><span class="no">06</span><div class="name"><h3>유튜브 풀퍼널 광고 운영</h3><span class="sub">브랜딩 채널이던 유튜브를 매출 채널로</span></div><span class="more lbl">Read case</span></div>
+    <div class="pic strip"><img src="assets/ads-masthead.jpg" alt="성수기 ROAS 추이와 마스트헤드 광고 소재" loading="lazy"></div>
+    <div class="g facts">
+      <div><span class="lbl">Role</span>광고 소재 기획·제작, 집행, 운영 매뉴얼 수립</div>
+      <div><span class="lbl">Period</span>2019 — 2020 · 야나두</div>
+      <div><span class="lbl">YouTube ROAS</span><b>300%</b></div>
+    </div>
+  </a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact wrap" id="contact">
+  <div class="opener lbl"><span>Contact</span><span class="muted">03 / 03</span></div>
+  <p class="say"><span class="u">브랜드 메시지를 콘텐츠로,</span><br><span class="u">증명하는 일을</span> <span class="u">함께 하고 싶습니다.</span></p>
+  <div class="mail"><a href="mailto:jeong0119@naver.com" id="mailAddr">jeong0119@naver.com</a><button class="btn" type="button" id="copyMail">Copy email</button></div>
+</section>
+</div>
+
+<!-- ============================================================ CASE 01 -->
+<article class="case wrap" id="work-01" hidden>
+  <header class="c-head">
+    <a class="back lbl" href="#work">← All work</a>
+    <span class="pno lbl">Project 01 / 06</span>
+    <h1>브랜드 오리지널 시리즈 B&amp;A 프로젝트</h1>
+    <p class="sub">‘야 너두 할 수 있어’를 증명한 유튜브 시리즈. 기획·섭외 담당으로 시작해 프로젝트 리딩까지 맡았습니다.</p>
+    <dl class="g c-meta">
+      <div><dt class="lbl">Period</dt><dd>2019 — 2021, 야나두</dd></div>
+      <div><dt class="lbl">My Role</dt><dd>콘텐츠 기획·출연진 섭외 및 운영 (2019) → 프로젝트 리딩 (2020–2021)</dd></div>
+      <div><dt class="lbl">Team</dt><dd>영상 기획 2인, 촬영 2팀(PD 3인), 학습 케어팀, 외부 출연진</dd></div>
+      <div><dt class="lbl">Tools</dt><dd>Microsoft Office, YouTube</dd></div>
+    </dl>
+  </header>
+
+  <figure class="plate strip"><div class="sx"><img src="assets/ba-strip.jpg" alt="B&amp;A 시리즈 썸네일: 1년 전, 6개월 전, 현재로 이어지는 출연자의 변화"></div><figcaption class="lbl">B&amp;A 시리즈 썸네일 — 출연자의 1년 전 · 6개월 전 · 현재</figcaption></figure>
+
+  <div class="g c-kpi">
+    <div class="lead"><div class="big-num">450<small>만</small></div><p>유튜브 누적 조회</p></div>
+    <ul><li><span>콘텐츠 제작</span><b>80건</b></li><li><span>시리즈 운영 기간</span><b>3년</b></li></ul>
+  </div>
+
+  <div class="g c-bg"><span class="lbl">Background</span><p>‘야 너두 할 수 있어’라는 캐치프레이즈는 이미 많이 알려져 있었습니다. 브랜드 인지도는 충분했지만, 그 말을 뒷받침하는 콘텐츠는 따로 없었습니다.</p></div>
+
+  <section class="g step" data-k="problem">
+    <div class="s-lbl"><span class="lbl muted">01</span><b>Problem</b><span class="ko">문제 발견</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-l"><span class="u">캐치프레이즈의 인지도는 높았지만,</span> <span class="u">진정성 있게 공감할 수 있는</span> <span class="u">콘텐츠는 없었습니다.</span></p>
+      <p>광고 카피만으로는 성인 학습자들이 가진 ‘나도 될까’ 하는 의심을 풀기 어려웠습니다.</p>
+    </div>
+  </section>
+
+  <section class="g step insight" data-k="insight">
+    <div class="s-lbl"><span class="lbl muted">02</span><b>Insight</b><span class="ko">판단</span></div>
+    <div class="s-body">
+      <p class="quote"><span class="u">‘나도 될까’는</span> <span class="u">카피로 풀리지 않는다.</span> <span class="u">비슷한 사람이</span> <span class="u">실제로 바뀌는 과정을</span> <span class="u">봐야 한다.</span></p>
+      <div class="g"><p class="after">그래서 광고처럼 보이지 않는 것이 중요하다고 판단했습니다. 출연자 한 명 한 명의 상황과 이야기가 중심에 있어야, 보는 사람이 자기 이야기처럼 느낄 수 있다고 봤습니다.</p></div>
+    </div>
+  </section>
+
+  <section class="g step" data-k="strategy">
+    <div class="s-lbl"><span class="lbl muted">03</span><b>Strategy</b><span class="ko">전략</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-m">실제 수강생의 학습 전과 후(Before &amp; After)를 보여주는 유튜브 시리즈.</p>
+      <p>학습 수준과 사연이 서로 다른 출연진을 모으고, 각자의 학습 현황에 맞춰 이야기를 구성했습니다. 시리즈는 성수기 콘텐츠 확산을 목표로 하는 연간 프로젝트로 운영했습니다.</p>
+    </div>
+  </section>
+
+  <section class="g step" data-k="execution">
+    <div class="s-lbl"><span class="lbl muted">04</span><b>Execution</b><span class="ko">실행</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <ol class="list">
+        <li>수강생·인플루언서·내부 직원 등 학습 수준과 사연이 다양한 출연진 섭외</li>
+        <li>학습 케어팀에서 출연자의 월별 학습 현황을 공유받아 스토리 구성과 촬영 시점에 반영. 따로 관리가 필요한 출연자는 직접 연락해 챙김</li>
+        <li>출연자별 수준과 이야기에 맞춘 영상 기획 및 촬영 진행</li>
+        <li>리딩을 맡은 뒤 연간 콘텐츠 일정과 성수기 확산 일정 관리</li>
+        <li>캠페인 전용 페이지 기획 및 제작</li>
+        <li>타깃·매체별 크리에이티브 기획, 확산용 광고 소재 제작 및 바이럴 세팅</li>
+      </ol>
+    </div>
+  </section>
+  <figure class="plate narrow"><div class="row"><img src="assets/ba-01.jpg" alt="B&amp;A 썸네일: 외국인과 영어로 처음 대화했습니다"><img src="assets/ba-02.jpg" alt="B&amp;A 썸네일: 지금 내 성적이 그래 어휘가 없네?"></div><figcaption class="lbl">시리즈 에피소드 썸네일</figcaption></figure>
+
+  <section class="g step" data-k="result">
+    <div class="s-lbl"><span class="lbl muted">05</span><b>Result</b><span class="ko">결과</span></div>
+    <div class="s-body">
+      <div class="res"><div><div class="n">80<small>건</small></div><span>콘텐츠 제작</span></div><div><div class="n">450<small>만</small></div><span>유튜브 누적 조회</span></div></div>
+      <ul class="list plain">
+        <li>캐치프레이즈를 뒷받침하는 콘텐츠가 쌓이면서 광고 소재와 랜딩 페이지에 다시 활용</li>
+        <li>단발성 캠페인이 아니라 3년간 이어진 시리즈로 운영</li>
+        <li>실무 담당에서 프로젝트 리딩으로 역할 확대</li>
+      </ul>
+      <p class="note">* 수치는 프로젝트 전체 성과입니다. 본인은 콘텐츠 기획·섭외·운영을 거쳐 이후 프로젝트 리딩을 담당했습니다.</p>
+    </div>
+  </section>
+
+
+  <a class="next" href="#work-02"><span class="lbl">Next — Project 02</span><b>크리에이터 협업 시스템 구축 →</b></a>
+</article>
+
+<!-- ============================================================ CASE 02 -->
+<article class="case wrap" id="work-02" hidden>
+  <header class="c-head">
+    <a class="back lbl" href="#work">← All work</a>
+    <span class="pno lbl">Project 02 / 06</span>
+    <h1>크리에이터 협업 시스템 구축</h1>
+    <p class="sub">혼자 시작한 크리에이터 협업을 매출 채널로. 매번 다르게 하던 설명을 브리프와 섭외 기준으로 정리했습니다.</p>
+    <dl class="g c-meta">
+      <div><dt class="lbl">Period</dt><dd>2019 — 2021, 야나두 (야나두 영어 · 야핏)</dd></div>
+      <div><dt class="lbl">My Role</dt><dd>크리에이터 협업 전략 수립 및 운영 (초기 1인 운영)</dd></div>
+      <div><dt class="lbl">Team</dt><dd>MCN, 외부 크리에이터, 광고 운영 담당</dd></div>
+      <div><dt class="lbl">Channel</dt><dd>YouTube</dd></div>
+    </dl>
+  </header>
+
+  <figure class="plate strip"><div class="sx"><img src="assets/creator-grid.jpg" alt="크리에이터 협업 콘텐츠 썸네일 모음"></div><figcaption class="lbl">크리에이터 협업 주요 콘텐츠</figcaption></figure>
+
+  <div class="g c-kpi">
+    <div class="lead"><div class="big-num">20<small>%</small></div><p>연간 총 매출 중 크리에이터 채널 비중</p></div>
+    <ul><li><span>크리에이터 협업</span><b>363건</b></li><li><span>누적 조회</span><b>2,560만</b></li><li><span>팀 규모</span><b>1인 → 3인</b></li></ul>
+  </div>
+
+  <div class="g c-bg"><span class="lbl">Background</span><p>캠페인의 대세감을 키우고 매출을 늘리기 위해, 퍼널별로 효과적인 크리에이터와 콘텐츠를 확보해야 했습니다. 이 업무를 처음에는 혼자 맡았습니다.</p></div>
+
+  <section class="g step" data-k="problem">
+    <div class="s-lbl"><span class="lbl muted">01</span><b>Problem</b><span class="ko">문제 발견</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-l">협업할 때마다 브랜드와 상품을 처음부터 설명해야 했습니다.</p>
+      <p>설명하는 방식이 그때그때 달라서, 영상마다 브랜드 메시지가 전달되는 수준이 들쭉날쭉했습니다. 어떤 크리에이터를 섭외할지에 대한 기준도 따로 정리되어 있지 않았습니다.</p>
+    </div>
+  </section>
+
+  <section class="g step insight" data-k="insight">
+    <div class="s-lbl"><span class="lbl muted">02</span><b>Insight</b><span class="ko">판단</span></div>
+    <div class="s-body">
+      <p class="quote"><span class="u">구성은 크리에이터에게</span> <span class="u">맡긴다.</span> <span class="u">꼭 필요한 메시지만</span> <span class="u">고정한다.</span></p>
+      <div class="g"><p class="after">그래서 매번 달라지던 설명과 정해지지 않은 섭외 기준을 먼저 정리하는 데 초점을 뒀습니다.</p></div>
+    </div>
+  </section>
+
+  <section class="g step" data-k="strategy">
+    <div class="s-lbl"><span class="lbl muted">03</span><b>Strategy</b><span class="ko">전략</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-m">반복하던 설명은 크리에이터용 브리프로, 감으로 하던 섭외는 기준으로.</p>
+      <p>크리에이터 유형별로 효과적인 브랜드 메시지를 정리하고, 직접 컨택과 MCN 협업을 함께 쓰는 운영 방식을 세웠습니다.</p>
+    </div>
+  </section>
+
+  <section class="g step" data-k="execution">
+    <div class="s-lbl"><span class="lbl muted">04</span><b>Execution</b><span class="ko">실행</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <ol class="list">
+        <li>브랜드 방향성, 상품별 특징, 영상에서 특징을 보여주는 방법, 반드시 설명해야 할 포인트를 담은 크리에이터 브리프 작성 및 배포</li>
+        <li>크리에이터 레벨링 기준과 섭외 매뉴얼 정리</li>
+        <li>직접 컨택과 MCN 협업을 병행하는 운영 방식 정립</li>
+        <li>콘텐츠 확산을 위한 유튜브 광고 집행</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="g step" data-k="result">
+    <div class="s-lbl"><span class="lbl muted">05</span><b>Result</b><span class="ko">결과</span></div>
+    <div class="s-body">
+      <div class="res">
+        <div><div class="n">168<small>건</small></div><span>야나두 영어 협업 · 2,100만 조회</span></div>
+        <div><div class="n">195<small>건</small></div><span>야핏 협업 · 460만 조회</span></div>
+        <div><div class="n">227<small>만</small></div><span>메가급 크리에이터 콘텐츠 최대 조회</span></div>
+        <div><div class="n">20<small>%</small></div><span>크리에이터 채널의 연간 총 매출 비중</span></div>
+      </div>
+      <ul class="list plain"><li>1인으로 시작한 업무가 볼륨이 커지면서 3인 팀으로 확대</li></ul>
+    </div>
+  </section>
+
+
+  <a class="next" href="#work-03"><span class="lbl">Next — Project 03</span><b>신규 브랜드 ‘야핏’ 런칭 캠페인 →</b></a>
+</article>
+
+<!-- ============================================================ CASE 03 -->
+<article class="case wrap" id="work-03" hidden>
+  <header class="c-head">
+    <a class="back lbl" href="#work">← All work</a>
+    <span class="pno lbl">Project 03 / 06</span>
+    <h1>신규 브랜드 ‘야핏’ 런칭 캠페인</h1>
+    <p class="sub">새로운 형태의 제품을 장면으로 설명하기. 앱과 실내 사이클을 함께 쓰는 신규 브랜드의 런칭에서 콘텐츠 파트를 맡았습니다.</p>
+    <dl class="g c-meta">
+      <div><dt class="lbl">Period</dt><dd>2021 — 2022.03, 야나두</dd></div>
+      <div><dt class="lbl">My Role</dt><dd>콘텐츠 파트 담당: PPL 기획 및 관리, 크리에이터 협업 전략 수립</dd></div>
+      <div><dt class="lbl">Team</dt><dd>사업부서 1인, 크리에이터 컨택 담당 1인, 광고 콘텐츠 기획 1인, 방송 제작사, MCN</dd></div>
+      <div><dt class="lbl">Main Content</dt><dd>MBC ‘호적메이트’ PPL, 메인 모델 인터뷰, 크리에이터 콜라보</dd></div>
+    </dl>
+  </header>
+
+  <figure class="plate strip"><div class="sx"><img src="assets/yafit-strip.jpg" alt="야핏 캠페인 주요 콘텐츠 썸네일 모음"></div><figcaption class="lbl">야핏 캠페인 주요 콘텐츠</figcaption></figure>
+
+  <div class="g c-kpi">
+    <div class="lead"><div class="big-num">+126<small>%</small></div><p>네이버 검색량, PPL 전 대비</p></div>
+    <ul><li><span>유입량 (전주 대비)</span><b>+200%</b></li><li><span>유입량 (전월 대비)</span><b>+300%</b></li><li><span>주요 채널 협업 후 매출 (전주 대비)</span><b>+70%</b></li><li><span>크리에이터 협업</span><b>195건</b></li><li><span>누적 조회</span><b>460만</b></li></ul>
+  </div>
+
+  <div class="g c-bg"><span class="lbl">Background</span><p>신규 브랜드 런칭으로 인지도를 확보해야 했습니다. 동시에 상품 사용 방법과 효과를 함께 알려 구매 전환까지 이끌어야 했습니다.</p></div>
+
+  <section class="g step" data-k="problem">
+    <div class="s-lbl"><span class="lbl muted">01</span><b>Problem</b><span class="ko">문제 발견</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-l"><span class="u">고객에게 브랜드 인지도를 높이면서,</span> <span class="u">제품에 대한 이해도도</span> <span class="u">함께 확보해야 했습니다.</span></p>
+      <p>사업부서에서 받은 USP는 스펙 위주라 그대로는 콘텐츠로 만들기 어려웠습니다.</p>
+    </div>
+  </section>
+
+  <section class="g step insight" data-k="insight">
+    <div class="s-lbl"><span class="lbl muted">02</span><b>Insight</b><span class="ko">판단</span></div>
+    <div class="s-body">
+      <p class="quote"><span class="u">USP →</span> <span class="u">고객이 쉽게 이해할 수 있는</span> <span class="u">사용 장면으로 연출한다.</span></p>
+      <div class="g"><p class="after">새로운 형태의 제품은 스펙 설명만으로는 이해되기 어렵다고 판단해, 고객의 관점에서 제품을 보여주었습니다.</p></div>
+    </div>
+  </section>
+
+  <section class="g step" data-k="strategy">
+    <div class="s-lbl"><span class="lbl muted">03</span><b>Strategy</b><span class="ko">전략</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-m">채널마다 역할을 나눴습니다.</p>
+      <div class="flow" style="--n:3">
+        <div><span class="lbl">인지</span><b>메인 모델 콘텐츠 · 방송 PPL</b><p>브랜드를 넓게 알리는 역할</p></div>
+        <div><span class="lbl">사용 장면</span><b>크리에이터 콘텐츠</b><p>어떻게 쓰고 무엇이 좋은지 보여주는 역할</p></div>
+        <div><span class="lbl">구매 전환</span><b>광고 소재</b><p>매출로 연결하는 역할</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="g step" data-k="execution">
+    <div class="s-lbl"><span class="lbl muted">04</span><b>Execution</b><span class="ko">실행</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <ol class="list">
+        <li>사업부서 USP를 크리에이터·PPL 진행용 기획 문서로 다시 작성</li>
+        <li>메인 모델 인터뷰 콘텐츠 기획 및 제작</li>
+        <li>방송 PPL 프로그램 검토 및 노출 기획·관리</li>
+        <li>크리에이터 콜라보 섭외 및 기획 (Project 02와 연계)</li>
+        <li>매출로 연결하기 위한 광고용 콘텐츠 베리에이션 제작</li>
+      </ol>
+    </div>
+  </section>
+  <figure class="plate narrow"><img src="assets/yafit-01.jpg" alt="야핏 캠페인 콘텐츠 썸네일: 확실한 운동방법 알려드립니다"><figcaption class="lbl">야핏 캠페인 콘텐츠</figcaption></figure>
+
+  <section class="g step" data-k="result">
+    <div class="s-lbl"><span class="lbl muted">05</span><b>Result</b><span class="ko">결과</span></div>
+    <div class="s-body">
+      <div class="res">
+        <div><div class="n">+70<small>%</small></div><span>주요 채널 협업 후 매출, 전주 대비</span></div>
+        <div><div class="n">+126<small>%</small></div><span>네이버 검색량, PPL 전 대비</span></div>
+        <div><div class="n">+200<small>%</small></div><span>유입량, 전주 대비</span></div>
+        <div><div class="n">+300<small>%</small></div><span>유입량, 전월 대비</span></div>
+        <div><div class="n">195<small>건</small></div><span>크리에이터 협업</span></div>
+        <div><div class="n">460<small>만</small></div><span>크리에이터 콘텐츠 누적 조회</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <a class="next" href="#work-04"><span class="lbl">Next — Project 04</span><b>온사이트 &amp; 상품 랜딩 개편 →</b></a>
+</article>
+
+<!-- ============================================================ CASE 04 -->
+<article class="case wrap" id="work-04" hidden>
+  <header class="c-head">
+    <a class="back lbl" href="#work">← All work</a>
+    <span class="pno lbl">Project 04 / 06</span>
+    <h1>온사이트 &amp; 상품 랜딩 개편</h1>
+    <p class="sub">개편된 상품에 맞춰 브랜드 메시지와 광고 페이지, 사이트 안의 동선을 다시 정비해 리드 확보를 늘렸습니다.</p>
+    <dl class="g c-meta">
+      <div><dt class="lbl">Period</dt><dd>2025.12 — 2026.01, 야나두</dd></div>
+      <div><dt class="lbl">My Role</dt><dd>브랜드 메시지 정리, 홈페이지 및 광고 랜딩 구성 기획 (2인)</dd></div>
+      <div><dt class="lbl">Team</dt><dd>서비스 기획 1인, 디자이너 2인, 프론트 개발 3인</dd></div>
+      <div><dt class="lbl">Tools</dt><dd>Figma, Microsoft Clarity, GA4</dd></div>
+    </dl>
+  </header>
+
+  <figure class="plate narrow"><div class="row"><img src="assets/onsite-01.jpg" alt="광고 상품 페이지: 하루 1장 스르르 학습지"><img src="assets/onsite-02.jpg" alt="광고 상품 페이지: 영어의 진리 짧고 쉽게"></div><figcaption class="lbl">개편 후 광고 상품 페이지</figcaption></figure>
+
+  <div class="g c-kpi">
+    <div class="lead"><div class="big-num">+13<small>%</small></div><p>리드(DB) 확보, 동선 최적화 효과</p></div>
+    <ul><li><span>결제 CVR</span><b>5% → 7%</b></li></ul>
+  </div>
+
+  <div class="g c-bg"><span class="lbl">Background</span><p>상품의 판매 성격이 개편되면서, 기존 온사이트와 광고 상품 페이지의 메시지가 새 상품과 맞지 않게 되었습니다.</p></div>
+
+  <section class="g step" data-k="problem">
+    <div class="s-lbl"><span class="lbl muted">01</span><b>Problem</b><span class="ko">문제 발견</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-l">바뀐 상품에 맞는 브랜드 메시지가 사이트와 광고 페이지에 없었습니다.</p>
+      <ol class="list">
+        <li>개편된 상품 판매 성격에 맞는 브랜드 메시지로 온사이트와 광고 상품 페이지를 다시 만들어야 했습니다.</li>
+        <li>유효한 DB를 얻기 위해 광고 페이지의 메시지를 정비해야 했습니다.</li>
+        <li>오가닉 트래픽을 활성화할 방향을 제안해야 했습니다.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="g step insight" data-k="insight">
+    <div class="s-lbl"><span class="lbl muted">02</span><b>Insight</b><span class="ko">판단</span></div>
+    <div class="s-body">
+      <p class="quote"><span class="u">고객에게 홈페이지는</span> <span class="u">‘팜플렛’이었다.</span> <span class="u">상담 신청할 곳을</span> <span class="u">따로, 분명하게</span> <span class="u">보여줘야 한다.</span></p>
+      <div class="g"><div class="after">
+        <p>매출 변동이 보이면 GA4로 유입량과 페이지 간 이동 경로를 확인해, 고객이 다른 페이지를 둘러본 뒤 돌아와 전환하는지 이탈하는지 살폈습니다. 스크롤 깊이와 체류 시간으로는 초반에 이탈하는지, 끝까지 읽고도 전환하지 않는 설득력 부족한 페이지인지 구분했고, Clarity 히트맵으로 실제 인터랙션이 일어나는 지점을 확인했습니다.</p>
+        <p>판매 상품은 사실상 단일 상품이었고 페이지마다 DB를 남길 수는 있었지만, 고객은 광고 페이지가 아닌 이상 홈페이지를 정보를 얻는 용도로 쓰고 있었습니다. 하단 CTA와 중간 전환 요소가 있어도 마찬가지였습니다. 그래서 ‘여기서 상담 신청을 할 수 있다’를 분명히 인지시키는 전용 페이지를 만들기로 했습니다.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="g step" data-k="strategy">
+    <div class="s-lbl"><span class="lbl muted">03</span><b>Strategy</b><span class="ko">전략</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-m">브랜드 메시지와 상품 USP를 먼저 세우고, 그것을 광고 페이지와 사이트 동선에 그대로 반영.</p>
+      <ul class="list plain"><li>브랜드 메시지 수립 및 핵심 키워드 추출</li><li>상품 USP 정립 후 광고 페이지 구성에 반영</li></ul>
+    </div>
+  </section>
+
+  <section class="g step" data-k="execution">
+    <div class="s-lbl"><span class="lbl muted">04</span><b>Execution</b><span class="ko">실행</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <ol class="list">
+        <li>Microsoft Clarity와 GA4로 온사이트 내 고객 동선 파악</li>
+        <li>상담신청 전용 페이지 신설</li>
+        <li>메뉴별 유입 경로 세팅</li>
+        <li>홈페이지 및 광고 랜딩 구성 기획</li>
+      </ol>
+      <figure><img src="assets/onsite-03.jpg" alt="개편된 야나두 영어 모바일 홈 상단 메뉴" style="max-width:380px;width:100%"><figcaption class="lbl muted" style="margin-top:.6rem">모바일 홈 상단 메뉴</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="g step" data-k="result">
+    <div class="s-lbl"><span class="lbl muted">05</span><b>Result</b><span class="ko">결과</span></div>
+    <div class="s-body">
+      <div class="res"><div><div class="n">+13<small>%</small></div><span>리드(DB) 확보, 동선 최적화 효과</span></div><div><div class="n">+2<small>%p</small></div><span>결제 CVR, 기존 5% → 개선 7%</span></div></div>
+    </div>
+  </section>
+
+
+  <a class="next" href="#work-05"><span class="lbl">Next — Project 05</span><b>즉시 결제 상품 판매 기획 →</b></a>
+</article>
+
+<!-- ============================================================ CASE 05 -->
+<article class="case wrap" id="work-05" hidden>
+  <header class="c-head">
+    <a class="back lbl" href="#work">← All work</a>
+    <span class="pno lbl">Project 05 / 06</span>
+    <h1>즉시 결제 상품 판매 기획</h1>
+    <p class="sub">상담 없이도 팔리는 상품으로 TM 매출 공백 메우기. TM 판매와 충돌하지 않는 즉시 결제형 상품과 월별 프로모션을 운영했습니다.</p>
+    <dl class="g c-meta">
+      <div><dt class="lbl">Period</dt><dd>2026.01 — 2026.05, 야나두</dd></div>
+      <div><dt class="lbl">My Role</dt><dd>마케팅 전략 수립 및 상품 구성 세팅, 페이지 기획 및 발굴</dd></div>
+      <div><dt class="lbl">Team</dt><dd>디자이너 1인, 프론트 개발 1인</dd></div>
+      <div><dt class="lbl">Tools</dt><dd>Figma, Microsoft Clarity, GA4, Claude</dd></div>
+    </dl>
+  </header>
+
+  <figure class="plate"><div class="row"><img src="assets/promo-01.jpg" alt="봄시즌 단독특가 프로모션 페이지"><img src="assets/promo-02.jpg" alt="1/4 특가 프로모션 페이지"><img src="assets/promo-03.jpg" alt="1/4 특가로 가볍게 만나는 해외여행 필수템 페이지"></div><figcaption class="lbl">시즌·브랜드 이슈를 반영한 월별 프로모션 페이지</figcaption></figure>
+
+  <div class="g c-kpi">
+    <div class="lead"><div class="big-num">140<small>%</small></div><p>26년 3월 KPI 대비 매출 달성</p></div>
+    <ul><li><span>ROAS (26년 1월 ~ 3월)</span><b>479%</b></li></ul>
+  </div>
+
+  <div class="g c-bg"><span class="lbl">Background</span><p>판매가 TM(상담사 전화 판매)에 크게 의존하는 구조였습니다.</p></div>
+
+  <section class="g step" data-k="problem">
+    <div class="s-lbl"><span class="lbl muted">01</span><b>Problem</b><span class="ko">문제 발견</span><span class="arr">↓</span></div>
+    <div class="s-body"><p class="hl-l">상담사가 근무하지 않는 기간에는 매출 공백이 생겼습니다.</p></div>
+  </section>
+
+  <section class="g step insight" data-k="insight">
+    <div class="s-lbl"><span class="lbl muted">02</span><b>Insight</b><span class="ko">판단</span></div>
+    <div class="s-body">
+      <p class="quote"><span class="u">TM 고객과</span> <span class="u">즉시 결제 고객은</span> <span class="u">다른 사람이다.</span></p>
+      <div class="g"><div class="after">
+        <p>TM(DB) 상품은 기기가 결합된 고가 상품이라, 정수기나 휴대폰처럼 약정·렌탈에 익숙한 고객이 대상이라고 봤습니다.</p>
+        <p>즉시 결제 상품은 더 낮은 가격에, 모든 레벨용 구성 대신 레벨별로 나눈 구성으로 만들고 월 단위 가격을 표시해 가격 허들을 낮췄습니다. 가격은 TM 특별 할인가와 확실히 차이 나게 하되, 그만큼 혜택도 구분되도록 설계했습니다.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="g step" data-k="strategy">
+    <div class="s-lbl"><span class="lbl muted">03</span><b>Strategy</b><span class="ko">전략</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-m">TM 판매와 충돌하지 않는 즉시 결제형 상품을 세팅하고, 매달 프로모션으로 운영.</p>
+      <p>시즌과 브랜드 이슈를 반영해 월별 프로모션을 기획하고, 유입 경로별 전환을 보면서 상품 컨셉과 랜딩 구조를 맞췄습니다.</p>
+    </div>
+  </section>
+
+  <section class="g step" data-k="execution">
+    <div class="s-lbl"><span class="lbl muted">04</span><b>Execution</b><span class="ko">실행</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <ol class="list">
+        <li>상품 기획 및 A/B 테스트</li>
+        <li>시즌·브랜드 이슈를 반영한 월별 프로모션 기획</li>
+        <li>랜딩 페이지 기획 및 운영</li>
+        <li>Microsoft Clarity로 페이지 내 동선 개선</li>
+        <li>GA4로 유입 경로별 유입·전환 수치 파악 및 개선</li>
+      </ol>
+    </div>
+  </section>
+  <figure class="plate"><div class="row"><img src="assets/promo-04.jpg" alt="상반기 영어 지원금 최대 지급 특가 페이지"><img src="assets/promo-05.jpg" alt="상반기 영어 지원금 가격 구성 화면"></div><figcaption class="lbl">상반기 영어 지원금 프로모션 랜딩</figcaption></figure>
+
+  <section class="g step" data-k="result">
+    <div class="s-lbl"><span class="lbl muted">05</span><b>Result</b><span class="ko">결과</span></div>
+    <div class="s-body">
+      <div class="res"><div><div class="n">140<small>%</small></div><span>26년 3월 KPI 대비 매출 달성</span></div><div><div class="n">479<small>%</small></div><span>ROAS, 26년 1월 ~ 3월</span></div></div>
+    </div>
+  </section>
+
+
+  <a class="next" href="#work-06"><span class="lbl">Next — Project 06</span><b>유튜브 풀퍼널 광고 운영 →</b></a>
+</article>
+<!-- ============================================================ CASE 06 -->
+<article class="case wrap" id="work-06" hidden>
+  <header class="c-head">
+    <a class="back lbl" href="#work">← All work</a>
+    <span class="pno lbl">Project 06 / 06</span>
+    <h1>유튜브 풀퍼널 광고 운영</h1>
+    <p class="sub">브랜딩 채널이던 유튜브를 매출 채널로. 콘텐츠 담당자가 소재 제작과 집행까지 함께 맡았습니다.</p>
+    <dl class="g c-meta">
+      <div><dt class="lbl">Period</dt><dd>2019 — 2020, 야나두</dd></div>
+      <div><dt class="lbl">My Role</dt><dd>광고 소재 기획 및 제작, 광고 집행, 랩사 커뮤니케이션, 운영 매뉴얼 수립</dd></div>
+      <div><dt class="lbl">Team</dt><dd>소재 제작 1인, 랩사 1팀</dd></div>
+      <div><dt class="lbl">Media</dt><dd>YouTube 마스트헤드 · 디스커버리 · TFA</dd></div>
+    </dl>
+  </header>
+
+  <figure class="plate strip"><div class="sx"><img src="assets/ads-masthead.jpg" alt="성수기 기간 ROAS 추이 그래프와 유튜브 마스트헤드 광고 소재"></div><figcaption class="lbl">성수기 기간 ROAS 추이(꺾은선) · 마스트헤드 집행 소재</figcaption></figure>
+
+  <div class="g c-kpi">
+    <div class="lead"><div class="big-num">300<small>%</small></div><p>유튜브 광고 ROAS</p></div>
+    <ul><li><span>메인 시즌 일 광고비</span><b>1,000만원+</b></li></ul>
+  </div>
+
+  <div class="g c-bg"><span class="lbl">Background</span><p>유튜브는 그동안 브랜딩 용도로만 쓰이던 매체였습니다.</p></div>
+
+  <section class="g step" data-k="problem">
+    <div class="s-lbl"><span class="lbl muted">01</span><b>Problem</b><span class="ko">문제 발견</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-l">브랜딩에만 쓰던 유튜브를 구매 전환까지 이어지는 채널로 쓸 수 있을지 확인이 필요했습니다.</p>
+    </div>
+  </section>
+
+  <section class="g step insight" data-k="insight">
+    <div class="s-lbl"><span class="lbl muted">02</span><b>Insight</b><span class="ko">판단</span></div>
+    <div class="s-body">
+      <p class="quote"><span class="u">콘텐츠를</span> <span class="u">가장 잘 아는 사람이</span> <span class="u">소재도 만들어야 한다.</span></p>
+      <div class="g"><p class="after">이 판단에 따라 콘텐츠 담당인 제가 광고 소재 제작과 광고 집행을 함께 맡았습니다.</p></div>
+    </div>
+  </section>
+
+  <section class="g step" data-k="strategy">
+    <div class="s-lbl"><span class="lbl muted">03</span><b>Strategy</b><span class="ko">전략</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <p class="hl-m">성수기에 마스트헤드로 대세감을 먼저 만들고, 유튜브 안에서 구매까지 한 흐름으로.</p>
+      <div class="flow" style="--n:3">
+        <div><span class="lbl">Step 1 · 인지</span><b>마스트헤드</b><p>CPT 상품으로 성수기 대세감 형성</p></div>
+        <div><span class="lbl">Step 2</span><b>디스커버리</b></div>
+        <div><span class="lbl">Step 3 · 구매</span><b>TFA</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="g step" data-k="execution">
+    <div class="s-lbl"><span class="lbl muted">04</span><b>Execution</b><span class="ko">실행</span><span class="arr">↓</span></div>
+    <div class="s-body">
+      <ol class="list">
+        <li>마스트헤드 → 디스커버리 → TFA 순서로 퍼널 구성</li>
+        <li>퍼널별 A/B 테스트: CTA, 영상 인트로 구성 등 크리에이티브 요소 비교</li>
+        <li>성과가 좋은 소재를 모은 BoB 캠페인으로 광고 세트 최적화</li>
+        <li>구매 전환을 위한 콘텐츠 내 동선 정리</li>
+        <li>랩사 커뮤니케이션 및 광고 운영 매뉴얼 수립</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="g step" data-k="result">
+    <div class="s-lbl"><span class="lbl muted">05</span><b>Result</b><span class="ko">결과</span></div>
+    <div class="s-body">
+      <div class="res"><div><div class="n">300<small>%</small></div><span>유튜브 광고 ROAS</span></div><div><div class="n">1,000<small>만원+</small></div><span>메인 시즌 일 광고비, 마스트헤드 병행</span></div></div>
+      <ul class="list plain"><li>브랜딩 채널로만 쓰던 유튜브를 매출 채널로 확장</li></ul>
+    </div>
+  </section>
+
+
+  <a class="next" href="#work-01"><span class="lbl">Back to — Project 01</span><b>브랜드 오리지널 시리즈 B&amp;A 프로젝트 →</b></a>
+</article>
+
+</main>
+
+<footer class="wrap foot lbl"><span>© 2026 박정민</span><a href="#top">Back to top ↑</a></footer>
+
+<script>
+(function(){
+  if('scrollRestoration' in history)history.scrollRestoration='manual';
+  var cases=[].slice.call(document.querySelectorAll('.case'));
+  var items=[].slice.call(document.querySelectorAll('#chapterBar li'));
+  var active=null;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function route(){
+    var id=(location.hash||'').slice(1);
+    var target=id&&document.getElementById(id);
+    var c=target&&target.classList.contains('case')?target:null;
+    cases.forEach(function(el){el.hidden=el!==c});
+    document.body.classList.toggle('in-case',!!c);
+    active=c;
+    if(c){window.scrollTo(0,0);requestAnimationFrame(function(){window.scrollTo(0,0);});wire();}
+    else if(target){requestAnimationFrame(function(){target.scrollIntoView();});}
+    else{window.scrollTo(0,0);}
+    update();
+  }
+  function wire(){
+    items.forEach(function(li){
+      var sec=active.querySelector('[data-k="'+li.getAttribute('data-k')+'"]');
+      li.querySelector('a').onclick=function(e){e.preventDefault();if(sec)sec.scrollIntoView({behavior:reduce?'auto':'smooth'});};
+    });
+  }
+  function update(){
+    if(!active)return;
+    var line=window.innerHeight*0.45;
+    items.forEach(function(li){
+      var sec=active.querySelector('[data-k="'+li.getAttribute('data-k')+'"]');
+      if(!sec)return;
+      var r=sec.getBoundingClientRect();
+      var p=Math.max(0,Math.min(1,(line-r.top)/Math.max(r.height,1)));
+      li.querySelector('i').style.setProperty('--p',p);
+      li.classList.toggle('on',p>0&&p<1);
+    });
+  }
+  var ticking=false;
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;update();});}},{passive:true});
+  window.addEventListener('resize',update);
+  window.addEventListener('hashchange',route);
+  route();
+
+  var btn=document.getElementById('copyMail');
+  btn.addEventListener('click',function(){
+    function done(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy email';},1600);}
+    function fallback(){var s=window.getSelection(),r=document.createRange();r.selectNodeContents(document.getElementById('mailAddr'));s.removeAllRanges();s.addRange(r);btn.textContent='Selected — ⌘C';}
+    try{navigator.clipboard.writeText('jeong0119@naver.com').then(done,fallback);}catch(e){fallback();}
+  });
+})();
+</script>
+</body>
+</html>
